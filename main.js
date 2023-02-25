@@ -69,18 +69,31 @@ async function saveMessage(name, tiffin) {
         date: new Date().toISOString().slice(0, 10)
     });
     alert("Tiffin added successfully")
-    location.reload()
+    //location.reload()
+    window.location.href = "view.html";
 }
 
-function readMessage() {
+function readMessage(DateRange) {
+    var currentDate = "2000-01-01"
+        if(DateRange === "Today"){
+            currentDate = new Date().toISOString().slice(0, 10);
+        }else if(DateRange === "LastWeek"){
+            currentDate = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+        }
     messagesRef.on('value', (snapshot) => {
         const data = snapshot.val();
-        console.log(data)
         let withDalbhat = 0;
         let withoutDalbhat = 0;
         let total = 0;
+        var table = document.getElementById("myTable");
+        const numRows = table.rows.length;
+        for(let k=1;k<=numRows-2;k++){
+            var row = table.deleteRow(1);
+        }
         for (let i in data) {
-            var table = document.getElementById("myTable");
+
+            if(new Date(currentDate)<=new Date(data[i].date)){
+
             var row = table.insertRow(1);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
@@ -88,6 +101,10 @@ function readMessage() {
             cell1.innerHTML = data[i].date;
             cell2.innerHTML = data[i].name;
             cell3.innerHTML = data[i].tiffin;
+            total = parseInt(total) + parseInt(data[i].tiffin);
+
+        }
+
 
             //Count daily's tiffin
             if (new Date().toISOString().slice(0, 10) == data[i].date && data[i].tiffin == 80) {
@@ -97,7 +114,6 @@ function readMessage() {
                 withoutDalbhat = withoutDalbhat + 1
             }
 
-            total = parseInt(total) + parseInt(data[i].tiffin);
 
 
         }

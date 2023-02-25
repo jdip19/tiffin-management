@@ -56,6 +56,11 @@ tbody tr:hover {
         <h3>Total : <span id="indeTotal"></span></h3>
       </div>
       <div class="contact" id="view">
+        <select name="dateRange" id="dateRange" onchange="readMessage(this.value)" required>
+          <option value="Today">Today</option>
+          <option value="LastWeek">Last 7 Days</option>
+          <option value="All">All</option>
+      </select>
         <a href="./index.html" class="btn" style="float: right; margin-bottom: 3px;">Back to form</a>
         <table id="myTable">
             <thead>
@@ -88,7 +93,7 @@ tbody tr:hover {
 </body>
 </html>
 <script>
-    readMessage()
+    readMessage("Today")
     let ArrayData = ["AKASH MISHRA","DEVDAS KINDERKHEDIYA","HARSH NIRMAL","JAYDIP UPADHAYAY","KULDEEP","PARTH VAMJA","PRSHANT RAI","SAGAR BAGIYA","SANJAY PARMAR","TEJAS CHAUHAN","YASH SAHU","UMANAG SHAH","PREM RAJAK","DARSHIT VAGASHIYA","RISHABH SIYOTE"]
 
     for (let i = 0; i < ArrayData.length; i++) {
