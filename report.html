@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tiffin management</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<style>
+    table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+thead th {
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+</style>
+<body>
+  <div class="container">
+    <h1 class="brand"><span>Tiffin</span> management system</h1>
+    <div class="wrapper">
+      <div class="company-info">
+        <label>From Date</label>
+        <br />
+        <input type="date" name="fromDate" id="fromDate" placeholder="Select from date" />
+        <br />
+        <label>To Date</label>
+        <br />
+        <input type="date" name="toDate" id="toDate" placeholder="Select to date" />
+
+        <button class="btn" onclick="filter()">Filter</button>
+      </div>
+      <div class="contact" id="view">
+        <a href="./index.html" class="btn" style="float: right; margin-bottom: 3px;">Back to form</a>
+        <table id="myTable2">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Total</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td></td>
+                <td><h3>Total :</h3></td>
+                <td><span id="indeTotal"></span></td>
+              </tr>
+            </tbody>
+          </table>
+          
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
+<script>
+    storeInLocal()
+    getAllTotal("2020-01-01","2050-01-01")
+    loadReport()
+</script>
