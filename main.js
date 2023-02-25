@@ -12,6 +12,12 @@ const firebaseConfig = {
 
 };
 
+//date
+var options = { weekday: 'short',  day: 'numeric', month: 'short', year: 'numeric'};
+var today = new Date().toLocaleDateString('en-US', options);
+
+document.getElementById("date").textContent = today;
+
 firebase.initializeApp(firebaseConfig);
 // Reference messages collection
 var messagesRef = firebase.database().ref('messages');
@@ -25,7 +31,7 @@ async function submitForm(e) {
     // Get values
     console.log(e)
     var name = document.getElementById("name").value;
-    var tiffin = document.getElementById("tiffin").value;
+    var tiffin = document.querySelector('input[name="tiffin"]:checked').value;
     if (name === null || name == "" || name === undefined || name=="Select") {
         alert("Please select name")
         return
