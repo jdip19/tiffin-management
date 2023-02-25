@@ -161,8 +161,8 @@ function getTotal(value) {
                 count = count + 1
             }
         }
-        document.getElementById("indeTotal").innerHTML = total + "<span> (" + count + " Tiffins)</span>";
-
+        document.getElementById("indeTotal").innerHTML = "₹ "+ total ;
+        document.getElementById("indeCount").innerHTML =  count +" T." ;
     });
 }
 function getAllTotal(fromDate,toDate) {
@@ -180,7 +180,8 @@ function getAllTotal(fromDate,toDate) {
                 count = count + 1
             }
         }
-        document.getElementById("indeTotal").innerHTML = total + "<span> (" + count + " Tiffins)</span>";
+        document.getElementById("indeTotal").innerHTML = "₹ "+ total ;
+        document.getElementById("indeCount").innerHTML =  count +" T." ;
 
     });
 }
