@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     border-radius: 10px;
@@ -8,7 +9,7 @@
     color:#485e74;
     line-height:1.6;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding:1em;
+    padding:0em;
   }
   table {
     border-collapse: collapse;
@@ -40,10 +41,12 @@
   }
   
   .container{
-    max-width:1170px;
-    margin-left:auto;
-    margin-right:auto;
-    padding:1em;
+    max-width: 1170px;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% auto 0 auto;
   }
   
   ul{
@@ -51,6 +54,25 @@
     padding:0;
   }
   
+/* animatiom */
+/* .glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+
+} */
+
   .brand{
     text-align: center;
   }
@@ -60,7 +82,7 @@
   }
   
   .wrapper{
-    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+    box-shadow: 0 0 20px 0px rgba(72,94,116,0.2);
   }
   
   .wrapper > *{
@@ -76,28 +98,30 @@
   .contact{
     display: grid;
     background:#f9feff;
-    padding: 5px;
+    padding: 1em;
   }
 
 
 
   .header{
     text-align: center;
+    background: #c9e6ff40;
+    color: #485e74;
+    padding: 1em;
     
   }
   .header h3{
-    margin: 0;
+    margin: 0 auto;
     text-align: center !important;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .main-btn{
     text-align: center;
+    margin: 1em 0;
   }
 
   .contact div{
-    margin: 2% 0;
+    margin: 0.8rem 0;
   }
   
   /* FORM STYLES */
@@ -168,7 +192,7 @@
     }
   
     .company-info h3, .company-info ul, .brand{
-      text-align: left;
+      text-align: center;
     }
   }
   select {
@@ -176,7 +200,7 @@
     color: #333;
     font-size: 16px;
     border: 1px solid #ccc;
-    width: 250px;
+    width: 100%;
     height: 40px;
     text-align: center;
     text-indent: 10px;
@@ -247,6 +271,14 @@ input::placeholder {
   width: 100%; margin-top:3%;
 }
 @media only screen and (max-width: 767px) {
+  .contact div{
+    margin: 2% 0;
+  }
+  .header h3{
+    max-width: 75%;
+  }
+ 
+ 
   .name-dropdown{
     width: 100% !important;
   }
