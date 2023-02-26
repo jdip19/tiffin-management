@@ -17,6 +17,8 @@ var options = { weekday: 'short',  day: 'numeric', month: 'short', year: 'numeri
 var today = new Date().toLocaleDateString('en-US', options);
 
 document.getElementById("date").textContent = today;
+document.getElementById("brand").textContent = 'BHOJAN AAMANTRAN SANGATHAN';
+document.title = "BHOJAN AAMANTRAN SANGATHAN";
 
 firebase.initializeApp(firebaseConfig);
 // Reference messages collection
@@ -32,7 +34,7 @@ async function submitForm(e) {
     console.log(e)
     var name = document.getElementById("name").value;
     var tiffin = document.querySelector('input[name="tiffin"]:checked').value;
-    if (name === null || name == "" || name === undefined || name=="Select") {
+    if (name === null || name == "" || name === undefined || name=="Select Name") {
         alert("Please select name")
         return
     }
@@ -467,4 +469,6 @@ function filter(){
 
     }
 }
-
+function redirect(){
+    window.location.href="./index.html"
+  }
