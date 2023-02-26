@@ -1,52 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/x-icon" href="assets/favicon.svg">
   <title>Tiffin management</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
   <link rel="stylesheet" href="style.css">
 
 </head>
 
 <style>
-    table {
-  border-collapse: collapse;
-  width: 100%;
-  /* max-width: 800px; */
-  margin: 0 auto;
-}
-
-th, td {
-  padding: 10px;
-  text-align: center;
-}
-
-thead th {
-  background-color: #333;
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-tbody tr:hover {
-  background-color: #ddd;
-}
-
+  
 </style>
+
 <body>
   <div class="container">
-    <h1 class="brand" id="brand">BHOJAN AAMANTRAN SANGATHAN</h1>
     <div class="wrapper">
       <div class="company-info">
-       
+        <h1 class="brand" id="brand">BHOJAN AAMANTRAN SANGATHAN</h1>
         <h1>Today's tiffins</h1>
         <h3>With Dalbhat : <span id="WithDalbhat"></span></h3>
         <h3>Without Dalbhat : <span id="WithoutDalbhat"></span></h3>
@@ -56,7 +32,7 @@ tbody tr:hover {
         </select>
         <h3>Total : <span id="indeTotal"></span></h3> -->
       </div>
-      
+
       <div class="contact" id="view">
         <!-- <select name="dateRange" id="dateRange" onchange="readMessage(this.value)" required>
           <option value="Today" id="date"></span></option>
@@ -69,32 +45,34 @@ tbody tr:hover {
             <option value="Today" id="date"></span></option>
             <option value="LastWeek">Last 7 Days</option>
             <option value="All">All</option>
-        </select>
-        <button onclick="redirect()" class="btn" >Back to form</button>
-  
+          </select>
+          <button onclick="redirect()" class="btn">Back to form</button>
+
         </div>
         <table id="myTable">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Name</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td> <h3>Total :</h3></td>
-                <td id="total"></td>
-              </tr>
-              <!-- <tr>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td>
+                <h3>Total :</h3>
+              </td>
+              <td id="total"></td>
+            </tr>
+            <!-- <tr>
                 <td>21-02-2023</td>
                 <td>Jaydeep</td>
                 <td>80</td>
               </tr> -->
-            </tbody>
-          </table>
-          
+          </tbody>
+        </table>
+
       </div>
     </div>
   </div>
@@ -102,18 +80,19 @@ tbody tr:hover {
   <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
   <script src="main.js"></script>
 </body>
+
 </html>
 <script>
-    readMessage("Today")
-    
-    let ArrayData = ["AKASH MISHRA","DEVDAS KINDERKHEDIYA","HARSH NIRMAL","JAYDIP UPADHAYAY","KULDEEP","PARTH VAMJA","PRSHANT RAI","SAGAR BAGIYA","SANJAY PARMAR","TEJAS CHAUHAN","YASH SAHU","UMANAG SHAH","PREM RAJAK","DARSHIT VAGASHIYA","RISHABH SIYOTE"]
+  readMessage("Today")
 
-    for (let i = 0; i < ArrayData.length; i++) {
-            var option = document.createElement("option");
-            option.text = ArrayData[i];
-            option.value = ArrayData[i];
-            var select = document.getElementById("name");
-            select.appendChild(option);
+  let ArrayData = ["AKASH MISHRA", "DEVDAS KINDERKHEDIYA", "HARSH NIRMAL", "JAYDIP UPADHAYAY", "KULDEEP", "PARTH VAMJA", "PRSHANT RAI", "SAGAR BAGIYA", "SANJAY PARMAR", "TEJAS CHAUHAN", "YASH SAHU", "UMANAG SHAH", "PREM RAJAK", "DARSHIT VAGASHIYA", "RISHABH SIYOTE"]
 
-        }
+  for (let i = 0; i < ArrayData.length; i++) {
+    var option = document.createElement("option");
+    option.text = ArrayData[i];
+    option.value = ArrayData[i];
+    var select = document.getElementById("name");
+    select.appendChild(option);
+
+  }
 </script>

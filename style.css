@@ -10,6 +10,34 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding:1em;
   }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    text-align: center;
+    border-radius: 0;
+
+  }
+
+  thead th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tbody tr:hover {
+    background-color: #ddd;
+  }
   
   .container{
     max-width:1170px;
@@ -48,7 +76,7 @@
   .contact{
     display: grid;
     background:#f9feff;
-    padding: 10px;
+    padding: 5px;
   }
 
 
