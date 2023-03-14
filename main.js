@@ -92,6 +92,9 @@ function readMessage(DateRange) {
         const data = snapshot.val();
         let withDalbhat = 0;
         let withoutDalbhat = 0;
+        let withoutDalbhatExtra= 0;
+        let tifinTotal=0;
+
         let total = 0;
         var table = document.getElementById("myTable");
         const numRows = table.rows.length;
@@ -118,15 +121,22 @@ function readMessage(DateRange) {
             if (new Date().toISOString().slice(0, 10) == data[i].date && data[i].tiffin == 80) {
                 withDalbhat = withDalbhat + 1
             }
+            if (new Date().toISOString().slice(0, 10) == data[i].date && data[i].tiffin == 70) {
+                withoutDalbhatExtra = withoutDalbhatExtra + 1
+            }
             if (new Date().toISOString().slice(0, 10) == data[i].date && data[i].tiffin == 60) {
                 withoutDalbhat = withoutDalbhat + 1
             }
 
 
-
         }
+
+        tifinTotal = tifinTotal + withDalbhat + withoutDalbhatExtra + withoutDalbhat;
+
         document.getElementById("WithDalbhat").innerHTML = withDalbhat;
         document.getElementById("WithoutDalbhat").innerHTML = withoutDalbhat;
+        document.getElementById("WithoutDalbhatExtra").innerHTML = withoutDalbhatExtra;
+        document.getElementById("TifinTotal").innerHTML=tifinTotal;
         document.getElementById("total").innerHTML = total;
     });
 }

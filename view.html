@@ -25,7 +25,9 @@
         <h1 class="brand" id="brand">BHOJAN AAMANTRAN SANGATHAN</h1>
         <h1>Today's tiffins</h1>
         <h3>With Dalbhat : <span id="WithDalbhat"></span></h3>
+        <h3>Without Dalbhat with 3 Roti : <span id="WithoutDalbhatExtra"></span></h3>
         <h3>Without Dalbhat : <span id="WithoutDalbhat"></span></h3>
+        <h3>Total : <span id="TifinTotal"></span></h3>
 
         <!-- <select name="name" id="name" onchange="getTotal(this.value)" required>
             <option>Select</option>
@@ -85,7 +87,7 @@
 <script>
   readMessage("Today")
 
-  let ArrayData = ["AKASH MISHRA", "DEVDAS KINDERKHEDIYA", "HARSH NIRMAL", "JAYDIP UPADHAYAY", "KULDEEP", "PARTH VAMJA", "PRSHANT RAI", "SAGAR BAGIYA", "SANJAY PARMAR", "TEJAS CHAUHAN", "YASH SAHU", "UMANAG SHAH", "PREM RAJAK", "DARSHIT VAGASHIYA", "RISHABH SIYOTE"]
+  let ArrayData = ["AKASH MISHRA", "DEVDAS KINDERKHEDIYA", "HARSH NIRMAL", "JAYDIP UPADHAYAY", "PARTH VAMJA", "PRSHANT RAI", "SAGAR BAGIYA", "SANJAY PARMAR", "TEJAS CHAUHAN", "UMANAG SHAH", "DARSHIT VAGASHIYA"]
 
   for (let i = 0; i < ArrayData.length; i++) {
     var option = document.createElement("option");
